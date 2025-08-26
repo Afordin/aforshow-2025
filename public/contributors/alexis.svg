@@ -1,0 +1,68 @@
+<svg viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                0 1 0 0 0
+                                                0 0 1 0 0
+                                                0 0 0 20 -10" in="SourceGraphic" result="colormatrix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="colormatrix" result="blend"/>
+          </filter>
+        </defs>
+        <g id="notion-avatar" filter="url(#filter)">
+          <g id="notion-avatar-face" fill="#ffffff" >
+    <title>Face/ 11</title>
+    <g id="Face/-11" stroke="none" stroke-width="1" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M532,379 C664.54834,379 772,486.45166 772,619 C772,642.160109 783.234546,666.244677 777.453024,688.979248 C763.583554,743.517917 672,879 608,899 C513.514707,928.526654 373.476049,816.010833 320.189513,718.584987 C317.498129,718.859681 314.765451,719 312,719 C267.81722,719 232,683.18278 232,639 C232,599.134956 261.158843,566.080325 299.312086,560.00055 C325.599297,455.979213 419.809919,379 532,379 Z M295.858895,624.545187 L304.141105,655.454813" id="Path" stroke="#000000" stroke-width="24"></path>
+    </g>
+</g>
+<g id="notion-avatar-nose"  >
+    <title>Nose/ 9</title>
+    <g id="Nose/-9" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M631,694.380659 C663.848549,704.811956 684.630284,697.576454 693.345205,672.674154 C706.417587,635.320703 637.033407,606.392531 660.161467,579" id="Path" stroke="#000000" stroke-width="16"></path>
+    </g>
+</g>
+<g id="notion-avatar-mouth"  >
+    <title>Mouth/ 1</title>
+    <g id="Mouth/-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M549,759 C575.12979,773.666667 603.12979,781 633,781 C662.87021,781 682.87021,773.666667 693,759" id="Path" stroke="#000000" stroke-width="16"></path>
+    </g>
+</g>
+<g id="notion-avatar-eyes"  >
+    <title>Eyes/ 9</title>
+    <g id="Eyes/-9" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M570,507 C575.854822,507 581.122051,511.025253 584.779642,517.440484 L578,531 L589.369946,531.000208 C589.781247,533.557105 590,536.237678 590,539 C590,556.673112 581.045695,571 570,571 C558.954305,571 550,556.673112 550,539 C550,521.326888 558.954305,507 570,507 Z M708,507 C713.854822,507 719.122051,511.025253 722.779642,517.440484 L716,531 L727.369946,531.000208 C727.781247,533.557105 728,536.237678 728,539 C728,556.673112 719.045695,571 708,571 C696.954305,571 688,556.673112 688,539 C688,521.326888 696.954305,507 708,507 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</g>
+<g id="notion-avatar-eyebrows"  >
+    <title>Eyebrows/ 3</title>
+    <g id="Eyebrows/-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(512.000000, 484.000000)" stroke="#000000" stroke-width="24">
+            <path d="M152,14.0251712 C167.712271,3.95186377 182.349308,-0.695225271 195.911111,0.0839040908 C206.159229,0.672661315 219.876442,6.74452014 237.511111,14.0251712 C241.312508,15.5946162 247.475471,17.5862258 256,20" id="Path" transform="translate(204.000000, 10.000000) scale(-1, 1) translate(-204.000000, -10.000000) "></path>
+            <path d="M0,14.0251712 C15.7122706,3.95186377 30.3493076,-0.695225271 43.9111111,0.0839040908 C54.1592293,0.672661315 67.8764421,6.74452014 85.5111111,14.0251712 C89.3125078,15.5946162 95.4754707,17.5862258 104,20" id="Path"></path>
+        </g>
+    </g>
+</g>
+<g id="notion-avatar-glasses"  >
+    <title>Glasses/ 0</title>
+    <g id="Glasses/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"></g>
+</g>
+<g id="notion-avatar-hair"  >
+    <title>Hairstyle/ 6</title>
+    <g id="Hairstyle/-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M279,719 L312,727 L361,805 C345.104968,795.793015 330.104968,783.793015 316,769 C301.895032,754.206985 289.561699,737.540318 279,719 Z M343,303 C367,222.333333 442.666667,202.333333 570,243 C761,304 782,471 782,496 C782,512.666667 778.333333,533.666667 771,559 L769.377742,556.788495 C742.968282,520.931086 720.842368,498.001587 703,488 C652.173973,459.509334 588.817434,464 549,464 C509.182566,464 428.104379,430.95793 412,428 C409.688334,427.575411 401.590927,431.429106 429,448 L430.116018,448.665115 C436.887544,452.645909 447.182205,457.757538 461,464 C447.596463,464.038164 432.312171,461.806007 415.147123,457.303529 L412.503541,456.598811 C395.711977,452.076418 384.642719,448.384272 379.295767,445.522372 L380.06813,448.7074 C388.26572,482.685415 392.364515,505.362636 392.364515,516.739062 C392.364515,528.232771 383.924355,572.72458 367.044035,650.214489 L366,655 C350.666667,619.666667 338.333333,596 329,584 C315,566 300.202254,555.429256 288,559 L287.245493,559.229979 C278.745889,561.917334 258.53666,571.367129 244,589 C238.749387,595.368958 233.08272,607.368958 227,625 L226.065502,623.594497 C212.50066,603.100798 205.145493,587.902633 204,578 C200.118123,544.441696 214.597053,517.355586 214,510 C210.524124,467.177849 188,403 244,358 L246.2348,356.214 C282.6516,327.271333 314.906667,309.533333 343,303 Z" id="Shape" stroke="#000000" stroke-width="12" fill="#000000"></path>
+    </g>
+</g>
+<g id="notion-avatar-accessories"  >
+    <title>Accessories/ 0</title>
+    <g id="Accessories/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"></g>
+</g>
+<g id="notion-avatar-details"  >
+    <title>Details/ 0</title>
+    <g id="Details/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"></g>
+</g>
+<g id="notion-avatar-beard"  >
+    <title>Beard/ 0</title>
+    <g id="Beard/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"></g>
+</g>
+        </g>
+      </svg>
