@@ -74,7 +74,7 @@ export const contributors = [
 	{
 		id: 12,
 		title: "Tovir",
-		img: "/contributors/aforcita.svg",
+		img: "/contributors/tovir.svg",
 		github_url: "https://github.com/vadegad0",
 	},
 ];
