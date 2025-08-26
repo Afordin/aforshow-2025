@@ -4,7 +4,9 @@ import ShareTicket from "./ShareTicket.astro";
 ---
 
 <section id="ticket" class="flex flex-col justify-center items-center">
-  <div class="flex items-center justify-center gap-2 md:gap-0 max-w-64 mx-auto md:max-w-full">
+  <div
+    class="flex items-center justify-center gap-2 md:gap-0 max-w-64 mx-auto md:max-w-full"
+  >
     <div>
       <img
         class="aspect-[194/120] scale-[1.75] md:scale-[1.25]"
@@ -94,7 +96,10 @@ import ShareTicket from "./ShareTicket.astro";
         $blurredTicket.style.display = "none";
         $ticketContainer.style.display = "flex";
         const name = user.user.user_metadata.name.split("#")[0];
-        const ticketSrc = `${siteUrl}api/og/${name}`;
+        const {
+          data: { session },
+        } = await supabase.auth.getSession();
+        const ticketSrc = `${siteUrl}api/og/${name}?token=${session?.access_token}`;
 
         const $downloadButton = document.getElementById(
           "download-ticket"
