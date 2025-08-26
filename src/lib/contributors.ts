@@ -57,6 +57,24 @@ export const contributors = [
 		id: 9,
 		title: "Nicole",
 		img: "/contributors/nicole.svg",
-		github_url: "https://github.com/developerleonardo",
+		github_url: "https://github.com/LauraNicole449",
+	},
+	{
+		id: 10,
+		title: "Alexis",
+		img: "/contributors/aforcita.svg",
+		github_url: "https://github.com/afordigital",
+	},
+	{
+		id: 11,
+		title: "Bauti",
+		img: "/contributors/aforcita.svg",
+		github_url: "https://github.com/afordigital",
+	},
+	{
+		id: 12,
+		title: "Tovir",
+		img: "/contributors/aforcita.svg",
+		github_url: "https://github.com/vadegad0",
 	},
 ];

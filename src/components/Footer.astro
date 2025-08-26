@@ -54,7 +54,30 @@ import { contributors } from "../lib/contributors";
     <div class="flex gap-2">
       {
         contributors
-          .filter((_, index) => index >= 5 && index < 10)
+          .filter((_, index) => index >= 4 && index < 8)
+          .map((contributor) => (
+            <a
+              href={contributor.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="relative group"
+            >
+              <img
+                src={contributor.img}
+                alt={`Contributor: ${contributor.title || contributor.user}`}
+                class="w-12 h-12 rounded-full"
+              />
+              <span class="absolute bottom-full mb-1 px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                {contributor.title || contributor.user}
+              </span>
+            </a>
+          ))
+      }
+    </div>
+     <div class="flex gap-2">
+      {
+        contributors
+          .filter((_, index) => index >= 8 && index < 13)
           .map((contributor) => (
             <a
               href={contributor.github_url}
