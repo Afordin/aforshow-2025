@@ -1,0 +1,82 @@
+<svg viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                0 1 0 0 0
+                                                0 0 1 0 0
+                                                0 0 0 20 -10" in="SourceGraphic" result="colormatrix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="colormatrix" result="blend"/>
+          </filter>
+        </defs>
+        <g id="notion-avatar" filter="url(#filter)">
+          <g id="notion-avatar-face" fill="#ffffff" >
+    <title>Face/ 9</title>
+    <g id="Face/-9" stroke="none" stroke-width="1"  fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M532,379 C664.54834,379 772,486.45166 772,619 C772,751.54834 704.54834,919 592,919 C506.683174,919 378.324367,822.776611 321.205121,718.475443 C318.188736,718.821948 315.115161,719 312,719 C267.81722,719 232,683.18278 232,639 C232,599.134956 261.158843,566.080325 299.312086,560.00055 C325.599297,455.979213 419.809919,379 532,379 Z M295.858895,624.545187 L304.141105,655.454813" id="Path" stroke="#000000" stroke-width="24"></path>
+    </g>
+</g>
+<g id="notion-avatar-nose"  >
+    <title>Nose/ 10</title>
+    <g id="Nose/-10" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M631,694.380659 C660.333333,687.46022 678,677.333333 684,664 C693,644 637.033407,606.392531 660.161467,579" id="Path" stroke="#000000" stroke-width="16"></path>
+    </g>
+</g>
+<g id="notion-avatar-mouth"  >
+    <title>Mouth/ 0</title>
+    <g id="Mouth/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M549,759 C576.33038,765.666667 599.663714,769 619,769 C638.336286,769 655.002953,765.666667 669,759" id="Path" stroke="#000000" stroke-width="16"></path>
+    </g>
+</g>
+<g id="notion-avatar-eyes"  >
+    <title>Eyes/ 6</title>
+    <g id="Eyes/-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(518.000000, 518.575690)">
+            <circle id="Oval" fill="#000000" cx="48.2285714" cy="20" r="20"></circle>
+            <path d="M0,22.4243101 C16,9.09097677 32,2.42431011 48,2.42431011 C64,2.42431011 80,9.09097677 96,22.4243101" id="Path" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle id="Oval" fill="#000000" transform="translate(193.771429, 20.000000) scale(-1, 1) translate(-193.771429, -20.000000) " cx="193.771429" cy="20" r="20"></circle>
+            <path d="M146,22.4243101 C162,9.09097677 178,2.42431011 194,2.42431011 C210,2.42431011 226,9.09097677 242,22.4243101" id="Path" stroke="#000000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" transform="translate(194.000000, 12.424310) scale(-1, 1) translate(-194.000000, -12.424310) "></path>
+        </g>
+    </g>
+</g>
+<g id="notion-avatar-eyebrows"  >
+    <title>Eyebrows/ 3</title>
+    <g id="Eyebrows/-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(512.000000, 484.000000)" stroke="#000000" stroke-width="24">
+            <path d="M152,14.0251712 C167.712271,3.95186377 182.349308,-0.695225271 195.911111,0.0839040908 C206.159229,0.672661315 219.876442,6.74452014 237.511111,14.0251712 C241.312508,15.5946162 247.475471,17.5862258 256,20" id="Path" transform="translate(204.000000, 10.000000) scale(-1, 1) translate(-204.000000, -10.000000) "></path>
+            <path d="M0,14.0251712 C15.7122706,3.95186377 30.3493076,-0.695225271 43.9111111,0.0839040908 C54.1592293,0.672661315 67.8764421,6.74452014 85.5111111,14.0251712 C89.3125078,15.5946162 95.4754707,17.5862258 104,20" id="Path"></path>
+        </g>
+    </g>
+</g>
+<g id="notion-avatar-glasses"  >
+    <title>Glasses/ 0</title>
+    <g id="Glasses/-0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"></g>
+</g>
+<g id="notion-avatar-hair"  >
+<g id="Hairstyle/ 40">
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M639 277.308C667.43 286.446 696 298 704 336C710.842 368.499 711 378 689 446C682.333 430.667 649.333 422 590 420C561.16 419.028 528.044 403.964 495 406C470.467 407.511 431.899 420.685 379.296 445.522L380.068 448.707C388.266 482.685 392.365 505.363 392.365 516.739C392.365 527.77 384.591 569.192 369.044 641.005L366 655L328.117 564.825H287.146C271.78 507.747 268.106 468.653 276.123 447.542C284.14 426.431 296.099 411.251 312 402C331 367 470.357 328.33 494.118 324.238C495.772 323.953 497.385 323.709 498.959 323.505L500.461 322.624C508.552 317.838 513.95 313.985 519.924 310.186C492.292 313.158 451.984 326.133 399.002 349.111C446.763 317.858 490.246 301.828 529.453 301.02C531.82 300.971 534.136 300.973 536.402 301.026C538.424 300.055 540.611 299.049 543 298C548.899 295.41 556.081 293.379 564.106 291.94C536.526 289.839 492.546 297.699 432.166 315.521C483.379 290.323 528.492 279.711 567.505 283.687C577.797 284.736 587.013 286.631 595.151 289.371C618.568 289.36 644.007 293.263 664.64 301.589C657.176 294.844 648.63 289.751 639 286.308C613.258 277.105 566.925 275.105 500 280.308C555.333 266.308 601.667 265.308 639 277.308Z" fill="black" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+</g>
+<g id="notion-avatar-accessories"  >
+    <title>Accessories/ 10</title>
+    <g id="Accessories/-10" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group" transform="translate(331.000000, 402.000000)" stroke="#000000">
+            <path d="M282,125 C279,98 272,73 209,73 C146,73 135.024573,103.117647 132.201043,121.941176 C129.377514,140.764706 155,196 204,196 C253,196 285,152 282,125 Z" id="Path" stroke-width="8" fill="#0C0C0C"></path>
+            <path d="M0,348 C77.1868597,283.810541 138.18686,225.810541 183,174 C227.81314,122.189459 267.146474,64.189459 301,0" id="Path" stroke-width="12"></path>
+        </g>
+    </g>
+</g>
+<g id="notion-avatar-details"  >
+    <title>Details/ 3</title>
+    <g id="Details/-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M491.752948,639.020916 L486.914511,658.42683 M511.752948,639.020916 L506.914511,658.42683 M531.752948,639.020916 L526.914511,658.42683 M789.247052,639.020916 L794.085489,658.42683 M769.247052,639.020916 L774.085489,658.42683 M749.247052,639.020916 L754.085489,658.42683" id="Combined-Shape" stroke="#000000" stroke-width="12"></path>
+    </g>
+</g>
+<g id="notion-avatar-beard"  >
+    <title>Beard/ 3</title>
+    <g id="Beard/-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M711,764 L707,764 L706.345455,762.706777 C700.563636,751.423471 694.781818,743.854545 689,740 C680,734 658,735 618,735 L615.604952,734.995328 C576.5692,734.8448 541.74,731.16 529,739 C520.333333,744.333333 514.333333,752.666667 511,764 L462,764 L366,655 L383,655 C388.047581,663.07807 393.047581,668.411404 398,671 C406.445576,675.414446 431.388408,682.267492 438,687 C450.42707,695.895166 463.760404,707.895166 478,723 L506,723 L532,713 C566.333333,708.333333 598.666667,706 629,706 C659.333333,706 688,709.333333 715,716 L734,739 L747,739 C762.333333,758.333333 758,790 734,834 C698,900 652.613614,901.016753 640,905 C621,911 543.350864,912.626406 512,903 L510.10195,902.41143 C478.827156,892.616328 434.373138,873.798208 408,829 C390.238499,798.829779 376.339484,741.682276 366.302955,657.557493 L366,655 L461,769 L512,769 C527.554629,792.760871 543.887962,808.760871 561,817 C577.940917,825.156738 592.158427,817.724205 603.652528,794.702402 L604,794 L629,794 C631.666667,809.333333 638.333333,817 649,817 C659.56,817 679.921,799.6849 710.083,765.0547 L711,764 Z" id="Path" stroke="#000000" stroke-width="12" fill="#000000"></path>
+    </g>
+</g>
+        </g>
+      </svg>
