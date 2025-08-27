@@ -123,9 +123,9 @@ export const GET: APIRoute = async ({ params, request }) => {
                 </h4>
                 ${
 									isSubscribed
-										? `<div style="display: flex; align-items: center; width: 64px; height: 21px; background-color: #F43E71; padding: 3px 12px; border-radius: 32px; gap: 4px;">
+										? `<div style="display: flex; align-items: center; color: #ffffff; width: 64px; height: 21px; background-color: #F43E71; padding: 3px 12px; border-radius: 32px; gap: 4px;">
                           <img src="https://afor.show/svgs/Twitch.svg" aria-hidden="true" alt="Twitch Logo" width="12" height="13" />
-                          <span style="font-family: "Inter"; font-size: 12px; font-weight: 700; color: #fff;">Sub</span>
+                          <span style="font-family: "Inter"; font-size: 12px; font-weight: 700; color: #ffffff;">Sub</span>
                         </div>`
 										: ""
 								}
