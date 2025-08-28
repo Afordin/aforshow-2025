@@ -68,7 +68,7 @@ export const contributors = [
 	{
 		id: 11,
 		title: "Bauti",
-		img: "/contributors/aforcita.svg",
+		img: "/contributors/bauti.svg",
 		github_url: "https://github.com/Bauti567",
 	},
 	{
@@ -76,5 +76,11 @@ export const contributors = [
 		title: "Tovir",
 		img: "/contributors/tovir.svg",
 		github_url: "https://github.com/vadegad0",
+	},
+	{
+		id: 13,
+		title: "kuro",
+		img: "/contributors/kuro.svg",
+		github_url: "https://github.com/ikurotime",
 	},
 ];
