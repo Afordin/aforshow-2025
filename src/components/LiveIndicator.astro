@@ -1,0 +1,55 @@
+---
+interface Props {
+  channelName: string;
+}
+
+const { channelName } = Astro.props;
+---
+
+<a
+  id="floating-live-indicator"
+  href={`https://twitch.tv/${channelName}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  title={`¡${channelName} está en directo! Haz clic para unirte.`}
+  class="fixed bottom-6 right-6 z-50
+    inline-flex items-center gap-3
+    py-2 px-4
+    bg-rose-600 text-white
+    font-bold text-sm rounded-full
+    shadow-lg
+    transform transition-transform hover:scale-105"
+>
+  <span class="relative flex h-3 w-3">
+    <span
+      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"
+    ></span>
+    <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+  </span>
+
+  <span>EN VIVO</span>
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const indicator = document.getElementById("floating-live-indicator");
+    if (!indicator) return;
+
+    const checkLiveStatus = async () => {
+      try {
+        const response = await fetch("/api/is-live");
+        if (!response.ok) return;
+
+        const data = await response.json();
+
+        if (data.isLive) {
+          indicator.classList.remove("hidden");
+        }
+      } catch (error) {
+        console.error("Error fetching Twitch live status:", error);
+      }
+    };
+
+    checkLiveStatus();
+  });
+</script>
