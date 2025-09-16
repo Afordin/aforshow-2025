@@ -16,11 +16,13 @@ import Talk from "./common/Talk.astro";
         fetchpriority="low"
       />
     </div>
-    <h1 class="text-subtitle font-bold max-w-36 md:max-w-full leading-9">Charlas y talleres</h1>
+    <h1 class="text-subtitle font-bold max-w-36 md:max-w-full leading-9">
+      Charlas y talleres
+    </h1>
   </header>
   <ul class="flex flex-col w-full gap-6">
     {
-      talks.map((talk) => (
+      talks.map((talk, index) => (
         <>
           <Talk
             title={talk.title || ""}
@@ -28,9 +30,14 @@ import Talk from "./common/Talk.astro";
             author={talk.author || ""}
             hour={talk.hour}
           />
-          {talk.hasBreak && (
+          {talk.hasBreak && index < 2 && (
             <li class="w-full flex justify-center font-handlee">
-              30 min descanso
+              Mesa redonda 1: ¿Qué preferirías? versión tech
+            </li>
+          )}
+          {talk.hasBreak && index > 2 && (
+            <li class="w-full flex justify-center font-handlee">
+              Mesa redonda 2
             </li>
           )}
         </>
