@@ -18,7 +18,7 @@ const { img, title, author, hour } = Astro.props;
       height="84"
       src={img}
       alt={`Profile image of the author: ${author}`}
-      class="border border-slate-200 rounded-full object-cover"
+      class="border bg-white border-slate-200 rounded-full object-cover"
       loading="lazy"
       decoding="async"
       fetchpriority="low"
@@ -28,5 +28,9 @@ const { img, title, author, hour } = Astro.props;
       <p class="font-medium text-sm">{author}</p>
     </div>
   </div>
-  <p class="font-handlee text-lg translate-y-4 md:translate-y-1.5 xl:translate-y-0">{hour}</p>
+  <p
+    class="font-handlee text-lg translate-y-4 md:translate-y-1.5 xl:translate-y-0"
+  >
+    {hour}
+  </p>
 </li>
