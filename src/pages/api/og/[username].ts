@@ -137,17 +137,16 @@ export const GET: APIRoute = async ({ params, request }) => {
                 ${day} ${month}. 2025 · 20.00h
               </div>
               <div style="display: flex; align-items: center; justify-content: flex-start; font-size: 3.5rem; font-weight: 400; color: #1E1E1E; gap: 8px; line-height: 0.9; margin: 0; height: 64px; width: 300px;">
-               <p style="line-height: 30px;">#${String(user.id).padStart(
-                 3,
-                 "0"
-               )}</p>
-               <div style="display: flex; flex-direction: column; align-content: center; font-size: 1rem;">
+               <p style="line-height: 30px; min-width: 150px;">#${String(
+                 user.id
+               ).padStart(3, "0")}</p>
+               <div style="display: flex; flex-direction: column; padding-left: 16px; align-content: center; font-size: 1rem;">
                   <img src="https://avatars.githubusercontent.com/u/46976866?v=4" alt="Sponsor ChermDev Logo Github" width="52" height="52" style="border-radius: 50%; margin-left: 6px;" />
                   <p>chermdev</p>
                 </div>
-                 <div style="display: flex; flex-direction: column; align-content: center; font-size: 1rem;">
+                 <div style="display: flex; flex-direction: column; padding-right: 8px; align-content: center; font-size: 1rem;">
                   <img src="https://avatars.githubusercontent.com/u/77805983?v=4" alt="Sponsor IkuroTime Logo Github" width="52" height="52" style="border-radius: 50%; margin-left: 6px;" />
-                  <p>ikuro</p>
+                  <p style="padding-left: 15px;">ikuro</p>
                 </div>
                <div style="display: flex; flex-direction: column;  align-content: center; font-size: 1rem;">
                   <img src="https://avatars.githubusercontent.com/u/128504393?s=200&v=4" alt="Sponsor Afordin Logo" width="52" height="52" style="border-radius: 50%;" />
