@@ -1,7 +1,6 @@
 ---
-// src/components/Talks.astro
 import { talks } from "../lib/talks";
-import TalkItem from "./common/TalkItem.astro";
+import Talk from "./common/Talk.astro";
 ---
 
 <section id="speakers" class="w-full flex flex-col items-center">
@@ -11,37 +10,38 @@ import TalkItem from "./common/TalkItem.astro";
         width="80"
         height="80"
         src="/svgs/Talks.svg"
-        alt=""
         aria-hidden="true"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
       />
     </div>
-    <h1 class="text-subtitle font-bold leading-9">Charlas y talleres</h1>
+    <h1 class="text-subtitle font-bold max-w-36 md:max-w-full leading-9">
+      Charlas y talleres
+    </h1>
   </header>
-
   <ul class="flex flex-col w-full gap-6">
-    {talks.map((talk, index) => (
-      <>
-        <!-- Sin client:load aquí -->
-        <TalkItem talk={talk} index={index} />
-
-        {talk.hasBreak && index < 2 && (
-          <li class="w-full flex justify-center font-handlee">
-            Mesa redonda 1: ¿Qué preferirías? versión tech
-          </li>
-        )}
-
-        {talk.hasBreak && index > 2 && (
-          <li class="w-full flex justify-center font-handlee">
-            Mesa redonda 2
-          </li>
-        )}
-      </>
-    ))}
+    {
+      talks.map((talk, index) => (
+        <>
+          <Talk
+            title={talk.title || ""}
+            img={talk.img || ""}
+            author={talk.author || ""}
+            hour={talk.hour}
+          />
+          {talk.hasBreak && index < 2 && (
+            <li class="w-full flex justify-center font-handlee">
+              Mesa redonda 1: ¿Qué preferirías? versión tech
+            </li>
+          )}
+          {talk.hasBreak && index > 2 && (
+            <li class="w-full flex justify-center font-handlee">
+              Mesa redonda 2
+            </li>
+          )}
+        </>
+      ))
+    }
   </ul>
 </section>
-
-<!-- Carga el script cliente que hará el formateo y la carga de banderas -->
-<script type="module" src="/src/components/speakers-client.js" defer></script>
