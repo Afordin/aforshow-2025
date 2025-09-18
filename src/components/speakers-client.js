@@ -1,12 +1,20 @@
+import { tzToCountry } from '../lib/tz-to-country.js';
+
 const formatToDot = date => {
-  const s = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit' }).format(date);
-  return s.replace(':', '.') + 'h';
+  const parts = new Intl.DateTimeFormat(undefined, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+
+  const hour = parts.find(p => p.type === 'hour')?.value || '00';
+  const minute = parts.find(p => p.type === 'minute')?.value || '00';
+
+  return `${hour}.${minute}h`;
 };
 
 const getFlagUrl = code =>
   code ? `https://flagcdn.com/w20/${code.toLowerCase()}.png` : '';
-
-let tzMapPromise = null;
 
 const setFallback = el => {
   if (!el) return;
@@ -57,16 +65,12 @@ const run = () => {
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone?.trim();
       if (!tz) return setFallback(flagContainer);
 
-      if (!tzMapPromise) {
-        tzMapPromise = import('/src/lib/tz-to-country.js')
-          .then(mod => mod.tzToCountry || {})
-          .catch(() => ({}));
+      const country = tzToCountry[tz];
+      if (country) {
+        insertFlagImg(flagContainer, country);
+      } else {
+        setFallback(flagContainer);
       }
-
-      tzMapPromise.then(map => {
-        insertFlagImg(flagContainer, map[tz]);
-      }).catch(() => setFallback(flagContainer));
-
     } catch (err) {
       console.error('speakers-client error:', err);
     }

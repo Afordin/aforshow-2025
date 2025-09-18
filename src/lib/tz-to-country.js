@@ -1,6 +1,4 @@
-// src/lib/tz-to-country.ts
-// Exporta un objeto plano: IANA timezone -> ISO 3166-1 alpha-2
-export const tzToCountry: Record<string, string> = {
+export const tzToCountry = {
   // Africa
   "Africa/Abidjan":"CI","Africa/Accra":"GH","Africa/Addis_Ababa":"ET","Africa/Algiers":"DZ","Africa/Asmera":"ER",
   "Africa/Bamako":"ML","Africa/Bangui":"CF","Africa/Banjul":"GM","Africa/Bissau":"GW","Africa/Blantyre":"MW",
