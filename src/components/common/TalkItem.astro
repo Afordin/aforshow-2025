@@ -25,10 +25,13 @@ const { talk, index } = Astro.props as { talk: Talk; index: number };
     <time
       class="event-local-time reserve-size"
       datetime={talk.datetime ?? ''}
-      data-event-iso={talk.datetime ?? ''}
       aria-live="polite"
     >
-      {talk.datetime ? new Date(talk.datetime).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' }).replace(':', '.') + 'h' : ''}
+      {talk.datetime ? new Date(talk.datetime).toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }).replace(':', '.') + 'h' : ''}
     </time>
 
     <span class="event-flag flag-reserve" aria-hidden="true" data-country={talk.country ?? ''}>
