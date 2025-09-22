@@ -50,7 +50,7 @@ const units: Unit[] = [
   type CountdownValues = Record<UnitKey, number>;
 
   let intervalId: ReturnType<typeof setInterval> | null = null;
-  const COUNTDOWN_FROM = new Date("2025-10-03T20:00:00").getTime();
+  const COUNTDOWN_FROM = new Date("2025-10-03T20:00:00+02:00").getTime();
   const TIME_UNITS = {
     SECOND: 1000,
     MINUTE: 60000,
