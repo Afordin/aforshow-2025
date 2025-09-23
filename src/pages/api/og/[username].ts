@@ -9,51 +9,51 @@ import path from "node:path";
 import sharp from "sharp";
 
 const handleeRegular = await fs.readFile(
-  path.resolve("./public/fonts/Handlee-Regular.ttf")
+	path.resolve("./public/fonts/Handlee-Regular.ttf"),
 );
 
 const supabaseURL = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseServiceKey = import.meta.env.SUPABASE_SERVICE_KEY;
 
 export const GET: APIRoute = async ({ params, request }) => {
-  if (!supabaseServiceKey) {
-    const imagePath = path.join(
-      process.cwd(),
-      "public",
-      "/imgs/afor_digital.png"
-    );
-    try {
-      const imageBuffer = await fs.readFile(imagePath);
-      return new Response(imageBuffer as any, {
-        status: 200,
-        headers: {
-          "Content-Type": "image/png",
-          "Cache-Control": "public, max-age=3600",
-        },
-      });
-    } catch (error) {
-      return new Response("Imagen no encontrada", { status: 404 });
-    }
-  }
+	if (!supabaseServiceKey) {
+		const imagePath = path.join(
+			process.cwd(),
+			"public",
+			"/imgs/afor_digital.png",
+		);
+		try {
+			const imageBuffer = await fs.readFile(imagePath);
+			return new Response(imageBuffer as any, {
+				status: 200,
+				headers: {
+					"Content-Type": "image/png",
+					"Cache-Control": "public, max-age=3600",
+				},
+			});
+		} catch (error) {
+			return new Response("Imagen no encontrada", { status: 404 });
+		}
+	}
 
-  const supabaseAdmin = createClient(supabaseURL, supabaseServiceKey);
-  const username = params.username;
+	const supabaseAdmin = createClient(supabaseURL, supabaseServiceKey);
+	const username = params.username;
 
-  const { data: user, error } = await supabaseAdmin
-    .from("users")
-    .select("id, name, username, avatar_url")
-    .eq("username", username)
-    .single();
+	const { data: user, error } = await supabaseAdmin
+		.from("users")
+		.select("id, name, username, avatar_url")
+		.eq("username", username)
+		.single();
 
-  if (error) {
-    throw new Error(`Usuario no encontrado: ${error.message}`);
-  }
+	if (error) {
+		throw new Error(`Usuario no encontrado: ${error.message}`);
+	}
 
-  const result = await checkUserSubscriptionByTwitchId(request);
-  const isSubscribed = result.isSubscribed;
+	const result = await checkUserSubscriptionByTwitchId(request);
+	const isSubscribed = result.isSubscribed;
 
-  // Hacemos el SVG dinámico obteniendo texto de los parámetros de la URL
-  const svgBorder = `
+	// Hacemos el SVG dinámico obteniendo texto de los parámetros de la URL
+	const svgBorder = `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="666"
@@ -70,11 +70,11 @@ export const GET: APIRoute = async ({ params, request }) => {
     </svg>
   `;
 
-  const svgBackground = `url('data:image/svg+xml;base64,${Buffer.from(
-    svgBorder
-  ).toString("base64")}')`;
+	const svgBackground = `url('data:image/svg+xml;base64,${Buffer.from(
+		svgBorder,
+	).toString("base64")}')`;
 
-  const starSvg = `
+	const starSvg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
       <path d="M23.5 46.2861C23.5 40.1862 21.0768 34.336 16.7635 30.0227C12.4501 25.7093 6.59998 23.2861 0.5 23.2861C6.59998 23.2861 12.4501 20.8629 16.7635 16.5496C21.0768 12.2363 23.5 6.38611 23.5 0.286133C23.5 6.38611 25.9232 12.2363 30.2365 16.5496C34.5499 20.8629 40.4 23.2861 46.5 23.2861C40.4 23.2861 34.5499 25.7093 30.2365 30.0227C25.9232 34.336 23.5 40.1862 23.5 46.2861Z" fill="url(#paint0_linear_775_169)"/>
       <defs>
@@ -87,25 +87,25 @@ export const GET: APIRoute = async ({ params, request }) => {
     </svg>
   `;
 
-  const borderImageSvg = `
+	const borderImageSvg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="76" height="70" viewBox="0 0 76 70" fill="none">
       <path d="M49.6038 3.77451C55.9979 5.51142 62.8405 10.9512 66.8202 16.4196C70.8093 21.8785 73.6342 30.0095 73.5292 36.5658C73.4243 43.1222 70.6089 50.6043 66.2094 55.7673C61.8003 60.9303 53.9938 65.6734 47.1129 67.5439C40.2321 69.4049 31.5762 69.2522 24.9339 66.9809C18.2916 64.7191 10.9241 59.5274 7.2594 53.935C3.59471 48.3425 2.64991 40.1828 2.94576 33.4165C3.25115 26.6502 4.72084 18.5382 9.05357 13.3275C13.3863 8.12633 21.1261 3.4214 28.9326 2.17121C36.7487 0.911468 50.8349 4.69068 55.9311 5.78818C61.0273 6.87613 59.8916 8.22176 59.5099 8.72757M37.1114 1.91353C43.7632 1.08325 51.3216 2.36207 57.1813 6.17946C63.0505 9.9873 69.626 18.6051 72.2981 24.7988C74.9703 30.9925 75.2375 37.4248 73.2047 43.3417C71.1815 49.2682 66.009 56.1204 60.1397 60.3291C54.261 64.5282 45.2138 68.0688 37.9798 68.5746C30.7459 69.0804 22.4717 67.3435 16.7456 63.3448C11.0195 59.3461 6.04738 51.0528 3.6138 44.5824C1.18021 38.1119 -0.0604359 30.3817 2.15365 24.522C4.36773 18.6623 10.8668 13.1557 16.9078 9.42424C22.9584 5.6832 35.2122 3.46912 38.4379 2.11394C41.6636 0.758772 36.2525 0.844664 36.262 1.30275" stroke="#1E1E1E" stroke-width="1.90869" stroke-linecap="round"/>
     </svg>
   `;
 
-  const starBackground = `url('data:image/svg+xml;base64,${Buffer.from(
-    starSvg
-  ).toString("base64")}')`;
-  const borderImageBackground = `url('data:image/svg+xml;base64,${Buffer.from(
-    borderImageSvg
-  ).toString("base64")}')`;
+	const starBackground = `url('data:image/svg+xml;base64,${Buffer.from(
+		starSvg,
+	).toString("base64")}')`;
+	const borderImageBackground = `url('data:image/svg+xml;base64,${Buffer.from(
+		borderImageSvg,
+	).toString("base64")}')`;
 
-  const month = "Oct";
-  const day = 3;
-  const amorPorDonaldTrump = "💩";
+	const month = "Oct";
+	const day = 3;
+	const amorPorDonaldTrump = "💩";
 
-  // 1. Define tu HTML como un string. Puedes usar estilos en línea.
-  const htmlTemplate = `
+	// 1. Define tu HTML como un string. Puedes usar estilos en línea.
+	const htmlTemplate = `
       <div
         style="position: relative; display: flex; width: 666px; height: 332px; background-image: ${svgBackground}; font-family: 'Handlee'; background-color: #fff; border-radius: 20px;"
       >
@@ -122,13 +122,13 @@ export const GET: APIRoute = async ({ params, request }) => {
                   ${user.name}
                 </h4>
                 ${
-                  isSubscribed
-                    ? `<div style="display: flex; align-items: center; color: #ffffff; width: 64px; height: 21px; background-color: #F43E71; padding: 3px 12px; border-radius: 32px; gap: 4px;">
+									isSubscribed
+										? `<div style="display: flex; align-items: center; color: #ffffff; width: 64px; height: 21px; background-color: #F43E71; padding: 3px 12px; border-radius: 32px; gap: 4px;">
                           <img src="https://afor.show/svgs/Twitch.svg" aria-hidden="true" alt="Twitch Logo" width="12" height="13" />
                           <span style="font-family: "Inter"; font-size: 12px; font-weight: 700; color: #ffffff;">Sub</span>
                         </div>`
-                    : ""
-                }
+										: ""
+								}
               </div>
             </div>
 
@@ -136,20 +136,24 @@ export const GET: APIRoute = async ({ params, request }) => {
               <div style="font-size: 1rem; font-weight: 400; color: #1E1E1E; line-height: 0.9; margin: 0;">
                 ${day} ${month}. 2025 · 20.00h
               </div>
-              <div style="display: flex; align-items: center; justify-content: flex-start; font-size: 3.5rem; font-weight: 400; color: #1E1E1E; gap: 8px; line-height: 0.9; margin: 0; height: 64px; width: 300px;">
-               <p style="line-height: 30px; min-width: 150px;">#${String(
-                 user.id
-               ).padStart(3, "0")}</p>
-               <div style="display: flex; flex-direction: column; padding-left: 16px; align-content: center; font-size: 1rem;">
-                  <img src="https://avatars.githubusercontent.com/u/46976866?v=4" alt="Sponsor ChermDev Logo Github" width="52" height="52" style="border-radius: 50%; margin-left: 6px;" />
+              <div style="display: flex; align-items: center; justify-content: flex-start; font-size: 3.5rem; font-weight: 400; color: #1E1E1E; gap: 4px; line-height: 0.9; margin: 0; height: 64px; width: 300px;">
+               <p style="line-height: 30px; min-width: 140px;">#${String(
+									user.id,
+								).padStart(3, "0")}</p>
+               <div style="display: flex; flex-direction: column; padding-left: 20px; align-content: center; font-size: 1rem;">
+                  <img src="https://avatars.githubusercontent.com/u/46976866?v=4" alt="Sponsor ChermDev Logo Github" width="44" height="44" style="border-radius: 50%; margin-left: 12px;" />
                   <p>chermdev</p>
                 </div>
-                 <div style="display: flex; flex-direction: column; padding-right: 8px; align-content: center; font-size: 1rem;">
-                  <img src="https://avatars.githubusercontent.com/u/77805983?v=4" alt="Sponsor IkuroTime Logo Github" width="52" height="52" style="border-radius: 50%; margin-left: 6px;" />
-                  <p style="padding-left: 15px;">ikuro</p>
+                <div style="display: flex; flex-direction: column; padding-left: 4px; align-content: center; font-size: 1rem;">
+                  <img src="https://avatars.githubusercontent.com/u/77805983?v=4" alt="Sponsor IkuroTime Logo Github" width="44" height="44" style="border-radius: 50%; margin-left: 6px;" />
+                  <p style="padding-left: 10px;">ikuro</p>
                 </div>
-               <div style="display: flex; flex-direction: column;  align-content: center; font-size: 1rem;">
-                  <img src="https://avatars.githubusercontent.com/u/128504393?s=200&v=4" alt="Sponsor Afordin Logo" width="52" height="52" style="border-radius: 50%;" />
+                <div style="display: flex; flex-direction: column; align-content: center; font-size: 1rem;">
+                  <img src="https://avatars.githubusercontent.com/u/2763238?v=4" alt="Sponsor Waligno Logo Discord" width="44" height="44" style="border-radius: 50%; margin-left: 10px;" />
+                  <p style="padding-left: 8px;">waligno</p>
+                </div>
+               <div style="display: flex; flex-direction: column; align-content: center; font-size: 1rem; margin-left: 12px;">
+                  <img src="https://avatars.githubusercontent.com/u/128504393?s=200&v=4" alt="Sponsor Afordin Logo" width="44" height="44" style="border-radius: 50%; margin-left: 4px;" />
                   <p style="margin-left: 4px;">afordin</p>
                 </div>
               </div>
@@ -158,7 +162,7 @@ export const GET: APIRoute = async ({ params, request }) => {
 
          
 
-          <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+          <div style="flex: 1; margin-left: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
             <div style="position: absolute; top: -10px; width: 40px; height: 40px; background-image: ${starBackground}; background-size: contain; display: flex;"></div>
 
             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; gap: 10px;">
@@ -179,34 +183,34 @@ export const GET: APIRoute = async ({ params, request }) => {
       </div>
   `;
 
-  // 2. Convierte el string de HTML a la estructura que Satori necesita
-  const markup = html(htmlTemplate);
+	// 2. Convierte el string de HTML a la estructura que Satori necesita
+	const markup = html(htmlTemplate);
 
-  // 3. Usa Satori para generar el SVG
-  const svg = await satori(markup, {
-    width: 666,
-    height: 332,
-    fonts: [
-      {
-        name: "Handlee",
-        data: handleeRegular,
-        weight: 700,
-        style: "normal",
-      },
-    ],
-  });
+	// 3. Usa Satori para generar el SVG
+	const svg = await satori(markup, {
+		width: 666,
+		height: 332,
+		fonts: [
+			{
+				name: "Handlee",
+				data: handleeRegular,
+				weight: 700,
+				style: "normal",
+			},
+		],
+	});
 
-  const pngBuffer = await sharp(Buffer.from(svg))
-    .resize(666, 332) // dimensiones OG
-    .png()
-    .toBuffer();
+	const pngBuffer = await sharp(Buffer.from(svg))
+		.resize(666, 332) // dimensiones OG
+		.png()
+		.toBuffer();
 
-  // 4. Devuelve el SVG con la cabecera correcta
-  return new Response(pngBuffer as any, {
-    status: 200,
-    headers: {
-      "Content-Type": "image/png",
-      "Cache-Control": "public, max-age=3600",
-    },
-  });
+	// 4. Devuelve el SVG con la cabecera correcta
+	return new Response(pngBuffer as any, {
+		status: 200,
+		headers: {
+			"Content-Type": "image/png",
+			"Cache-Control": "public, max-age=3600",
+		},
+	});
 };
