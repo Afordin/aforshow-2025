@@ -1,6 +1,20 @@
 ---
-import type { Talk } from '../../lib/talks';
-const { talk, index } = Astro.props as { talk: Talk; index: number };
+import type { Talk } from "../../lib/talks";
+const { talk } = Astro.props as { talk: Talk; index: number };
+
+const socialNetworks = {
+	linkedin: talk.linkedin,
+	instagram: talk.instagram,
+	youtube: talk.youtube,
+	twitch: talk.twitch,
+	twitter: talk.twitter,
+	tiktok: talk.tiktok,
+	github: talk.github,
+};
+
+const availableSocials = Object.entries(socialNetworks).filter(
+	([_, url]) => url,
+);
 ---
 
 <li class="talk-item flex px-4 gap-4 items-center md:max-lg:items-start py-4 rounded-xl justify-between bg-cs-background">
@@ -17,7 +31,31 @@ const { talk, index } = Astro.props as { talk: Talk; index: number };
     />
     <div class="flex flex-col gap-1">
       <h2 class="font-semibold">{talk.title}</h2>
-      <p class="font-medium text-sm">{talk.author}</p>
+      <div class="flex gap-2 items-center">
+        <p class="font-medium text-sm">{talk.author}</p>
+        
+        {availableSocials.length > 0 && (
+          <div class="flex gap-2 items-center cursor-pointer ml-2">
+            {availableSocials.map(([network, url]) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:opacity-70 transition-opacity"
+                aria-label={`${talk.author} en ${network}`}
+              >
+                <img
+                  src={`/svgs/socials/${network}.svg`}
+                  alt={`${network} icon`}
+                  width="16"
+                  height="16"
+                  class="w-4 h-4"
+                />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   </div>
 
