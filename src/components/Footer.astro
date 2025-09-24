@@ -28,7 +28,7 @@ import { contributors } from "../lib/contributors";
       {
         contributors
           .filter((_, index) => {
-            return index < 4;
+            return index < 5;
           })
           .map((contributor) => {
             return (
@@ -54,7 +54,7 @@ import { contributors } from "../lib/contributors";
     <div class="flex gap-2">
       {
         contributors
-          .filter((_, index) => index >= 4 && index < 9)
+          .filter((_, index) => index >= 5 && index < 11)
           .map((contributor) => (
             <a
               href={contributor.github_url}
@@ -77,7 +77,7 @@ import { contributors } from "../lib/contributors";
      <div class="flex gap-2">
       {
         contributors
-          .filter((_, index) => index >= 9 && index < 14)
+          .filter((_, index) => index >= 11 && index < 17)
           .map((contributor) => (
             <a
               href={contributor.github_url}

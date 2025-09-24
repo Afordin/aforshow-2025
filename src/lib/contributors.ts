@@ -83,4 +83,22 @@ export const contributors = [
 		img: "/contributors/kuro.svg",
 		github_url: "https://github.com/ikurotime",
 	},
+	{
+		id: 14,
+		title: "jarrison",
+		img: "/contributors/jarrison.svg",
+		github_url: "https://github.com/jarrisondev",
+	},
+	{
+		id: 15,
+		title: "vladiantio",
+		img: "/contributors/vladiantio.svg",
+		github_url: "https://github.com/vladiantio",
+	},
+	{
+		id: 16,
+		title: "erian",
+		img: "/contributors/erian.svg",
+		github_url: "https://github.com/eriandev",
+	},
 ];
