@@ -3,21 +3,24 @@ import type { Talk } from "../../lib/talks";
 const { talk } = Astro.props as { talk: Talk; index: number };
 
 const socialNetworks = {
-	linkedin: talk.linkedin,
-	instagram: talk.instagram,
-	youtube: talk.youtube,
-	twitch: talk.twitch,
-	twitter: talk.twitter,
-	tiktok: talk.tiktok,
-	github: talk.github,
+  linkedin: talk.linkedin,
+  instagram: talk.instagram,
+  youtube: talk.youtube,
+  twitch: talk.twitch,
+  twitter: talk.twitter,
+  tiktok: talk.tiktok,
+  github: talk.github,
+  web: talk.web,
 };
 
 const availableSocials = Object.entries(socialNetworks).filter(
-	([_, url]) => url,
+  ([_, url]) => url
 );
 ---
 
-<li class="talk-item flex px-4 gap-4 items-center md:max-lg:items-start py-4 rounded-xl justify-between bg-cs-background">
+<li
+  class="talk-item flex px-4 gap-4 items-center md:max-lg:items-start py-4 rounded-xl justify-between bg-cs-background"
+>
   <div class="flex flex-col md:flex-row gap-4 md:items-center">
     <img
       width="84"
@@ -33,46 +36,60 @@ const availableSocials = Object.entries(socialNetworks).filter(
       <h2 class="font-semibold">{talk.title}</h2>
       <div class="flex gap-2 items-center">
         <p class="font-medium text-sm">{talk.author}</p>
-        
-        {availableSocials.length > 0 && (
-          <div class="flex gap-2 items-center cursor-pointer ml-2">
-            {availableSocials.map(([network, url]) => (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:opacity-70 transition-opacity"
-                aria-label={`${talk.author} en ${network}`}
-              >
-                <img
-                  src={`/svgs/socials/${network}.svg`}
-                  alt={`${network} icon`}
-                  width="16"
-                  height="16"
-                  class="w-4 h-4"
-                />
-              </a>
-            ))}
-          </div>
-        )}
+
+        {
+          availableSocials.length > 0 && (
+            <div class="flex gap-2 items-center cursor-pointer ml-2">
+              {availableSocials.map(([network, url]) => (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:opacity-70 transition-opacity"
+                  aria-label={`${talk.author} en ${network}`}
+                >
+                  <img
+                    src={`/svgs/socials/${network}.svg`}
+                    alt={`${network} icon`}
+                    width="16"
+                    height="16"
+                    class="w-4 h-4"
+                  />
+                </a>
+              ))}
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
 
-  <div class="font-handlee text-lg translate-y-4 md:translate-y-1.5 xl:translate-y-0 flex items-center gap-2">
+  <div
+    class="font-handlee text-lg translate-y-4 md:translate-y-1.5 xl:translate-y-0 flex items-center gap-2"
+  >
     <time
       class="event-local-time reserve-size"
-      datetime={talk.datetime ?? ''}
+      datetime={talk.datetime ?? ""}
       aria-live="polite"
     >
-      {talk.datetime ? new Date(talk.datetime).toLocaleTimeString(undefined, {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      }).replace(':', '.') + 'h' : ''}
+      {
+        talk.datetime
+          ? new Date(talk.datetime)
+              .toLocaleTimeString(undefined, {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+              })
+              .replace(":", ".") + "h"
+          : ""
+      }
     </time>
 
-    <span class="event-flag flag-reserve" aria-hidden="true" data-country={talk.country ?? ''}>
+    <span
+      class="event-flag flag-reserve"
+      aria-hidden="true"
+      data-country={talk.country ?? ""}
+    >
       🌐
     </span>
   </div>
