@@ -4,30 +4,38 @@ import Link from "./common/Link.astro";
 import Countdown from "./Countdown.astro";
 ---
 
-<header class="flex flex-col gap-6 items-center">
+<header class="flex flex-col gap-7 items-center">
   <div class="flex flex-col gap-3 items-center px-4">
     <hgroup class="flex flex-col items-center">
       <h1
         class="fade-in-up text-hero-title text-center font-semibold font-handlee leading-12"
         style="--stagger:0"
       >
-        AforShow 2025
+        ¡Gracias por estar presente en el {" "}
       </h1>
       <p class="text-hero-inner-title text-center font-semibold font-handlee">
         <span class="fade-in-up inline-block" style="--stagger:1">
-          ¡Comparte,
-        </span>
-        <span class="fade-in-up inline-block" style="--stagger:2">
-          aprende,
-        </span>
-        <span class="fade-in-up inline-block" style="--stagger:3">
-          inspira!
+          Aforshow!
         </span>
       </p>
     </hgroup>
   </div>
 
-  <Countdown class="fade-in-up" />
+  <!-- <Countdown class="fade-in-up" /> -->
+  <div class="md:w-3/6 w-full px-4">
+    <h2 class="text-caTextSecondary text-lg mb-3 text-center">
+      Puedes ver la repetición del evento aquí:
+    </h2>
+    <div class="aspect-video w-full h-full">
+      <iframe
+        src="https://player.twitch.tv/?video=2582273307&parent=afor.show"
+        frameborder="0"
+        allowfullscreen
+        scrolling="no"
+        height="100%"
+        width="100%"></iframe>
+    </div>
+  </div>
 
   <footer
     style="--stagger:4"
@@ -38,15 +46,14 @@ import Countdown from "./Countdown.astro";
       variant="secondary">Ver charlas pasadas</Link
     >
     <Link href="https://twitch.tv/afor_digital" variant="primary"
-      >¡Ver el evento!</Link
+      >¡Visita el canal!</Link
     >
   </footer>
-
   <section
-    class="flex xl:max-2xl:justify-start 2xl:justify-end w-full h-[350px] pointer-events-none overflow-x-hidden"
+    class="flex xl:max-2xl:justify-start 2xl:justify-end w-full h-[250px] pointer-events-none overflow-x-hidden"
   >
     <HeroSvg
-      class="-translate-x-10 shrink-0 h-[350px] xl:translate-x-0 ml-auto"
+      class="-translate-x-10 shrink-0 h-[250px] xl:translate-x-0 ml-auto"
     />
   </section>
 </header>
